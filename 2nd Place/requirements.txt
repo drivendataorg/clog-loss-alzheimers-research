@@ -1,0 +1,9 @@
+albumentations
+awscli
+torch
+numpy
+tqdm
+matplotlib
+sklearn
+pandas
+lmdb
