@@ -23,7 +23,7 @@ This repository contains code from winning competitors in the [Clog Loss: Advanc
 
 Place | Team or User | Public Score | Private Score | Summary of Model
 ----- | ------------ | ---   | ---   | ---
-1     | ZFTurbo      | 0.844 | 0.856 | <Description from the 1st place's writeup>
+1     | ZFTurbo      | 0.844 | 0.856 | Solution is divided into four steps: (1) Region of interest extraction; (2) K-fold cross validation with 5 folds; (3) training of DenseNet 121 3D model; (4) Combining the five cross-validation models and using test-time augmentation.
 2     | kbrodt       | 0.846 | 0.838 | <Description from the 2nd place's writeup>
 3     | LauraOnac    | 0.777 | 0.810 | <Description from the 3rd place's writeup>
 Bonus | AZ_KA        | 0.467 | 0.536 | <Description from the 3rd place's writeup>
