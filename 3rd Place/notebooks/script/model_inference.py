@@ -19,17 +19,18 @@ submission_format_file = "../submissions/submission_format.csv"
 
 models_dir = "../models/"
 
-# R3D
-# model_path = models_dir + "R3D/model_v67_epoch_27_mcc_0.7801_acc_0.9635_loss0.1248.pth"
+# model_name = "R3D"
+# model_name = "MC3"
+model_name = "R(2+1)D_v1"
+# model_name = "R(2+1)D_v2"
 
-# MC3
-# model_path = models_dir + "MC3/model_v66_epoch_28_mcc_0.7989_acc_0.9673_loss0.1125.pth"
-
-# R(2+1)D v1
-model_path = models_dir + "R(2+1)D_v1/model_v65_epoch_28_mcc_0.769_acc_0.9635_loss0.1323.pth"
-
-# R(2+1)D v2
-# model_path = models_dir + "R(2+1)D_v2/model_v72_epoch_28_mcc_0.7306_acc_0.9572_loss0.1684.pth"
+model_path_dict = {
+    "R3D": models_dir + "R3D/model_v67_epoch_27_mcc_0.7801_acc_0.9635_loss0.1248.pth",
+    "MC3": models_dir + "MC3/model_v66_epoch_28_mcc_0.7989_acc_0.9673_loss0.1125.pth",
+    "R(2+1)D_v1": models_dir + "R(2+1)D_v1/model_v65_epoch_28_mcc_0.769_acc_0.9635_loss0.1323.pth",
+    "R(2+1)D_v2": models_dir + "R(2+1)D_v2/model_v72_epoch_28_mcc_0.7306_acc_0.9572_loss0.1684.pth",
+}
+model_path = model_path_dict[model_name]
 
 
 class VideoIterator(Dataset):
@@ -121,9 +122,14 @@ print(len(data_iterator))
 
 
 # Choose model architecture here:
-# model = R3dModel().to(device)
-# model = Rmc3Model().to(device)
-model = R2plus1dModel().to(device)
+model_class_dict = {
+    "R3D": R3dModel,
+    "MC3": Rmc3Model,
+    "R(2+1)D_v1": R2plus1dModel,
+    "R(2+1)D_v2": R2plus1dModel,
+}
+
+model = model_class_dict[model_name]().to(device)
 
 model.load_state_dict(torch.load(model_path, map_location=device))
 model.train()
@@ -140,7 +146,7 @@ with torch.no_grad():
         y_pred.append(p)
 
 
-subm_file =  "../submissions/inference_R(2+1)D_v1.csv"
+subm_file =  f"../submissions/inference_{model_name}.csv"
 
 df = data_iterator.df.copy(deep=False)
 
