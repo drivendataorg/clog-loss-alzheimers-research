@@ -1,4 +1,4 @@
-# Clog Loss: Advance Alzheimer’s Research with Stall Catchers 
+# Clog Loss: Advance Alzheimer’s Research with Stall Catchers
 
 [Clog Loss: Advance Alzheimer’s Research with Stall Catchers](https://www.drivendata.org/competitions/65/clog-loss-alzheimers-research/page/207/).
 
@@ -9,6 +9,7 @@ out of 922 with 0.8389 Matthew's correlation coefficient (MCC) (top 1 -- 0.8555)
 
 - GPU with 32Gb RAM (e.g. Tesla V100)
 - [NVIDIA apex](https://github.com/NVIDIA/apex)
+  - If you are having trouble installing apex, try Docker with the [nvidia:pytorch](https://ngc.nvidia.com/catalog/containers/nvidia:pytorch) image. You can map this directory as a volume when running the container interactively, and then install the requirements once inside the container.
 
 ```bash
 pip install -r requirements.txt
