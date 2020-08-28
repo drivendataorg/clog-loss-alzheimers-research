@@ -2,6 +2,7 @@
 # coding: utf-8
 
 import os
+from pathlib import Path
 import cv2
 import glob
 import numpy as np
@@ -78,7 +79,7 @@ def make_roi(videos, destination_folder):
 
         cap = cv2.VideoCapture(video)
         fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-        out = cv2.VideoWriter(destination_folder + video.split("\\")[-1], fourcc, 20, dim)
+        out = cv2.VideoWriter(destination_folder + Path(video).name, fourcc, 20, dim)
 
         if (cap.isOpened()== False): 
             print("Error opening video stream or file")
