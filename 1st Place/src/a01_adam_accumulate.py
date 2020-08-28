@@ -117,7 +117,7 @@ class AdamAccumulate(Optimizer):
         grads = self.get_gradients(loss, params)
         self.updates = [K.update_add(self.iterations, 1)]
 
-        lr = self.lr
+        lr = self.learning_rate
 
         completed_updates = K.cast(tf.floor(self.iterations / self.accum_iters), K.floatx())
 

@@ -1,8 +1,8 @@
 * Software Requirements
 
-Main requirements: Python 3.5+, keras 2.2+, Tensorflow 1.13+
+Main requirements: Python 3.5 or Python 3.6, keras 2.2+, Tensorflow 1.13+
 Other requirements: numpy, pandas, opencv-python, scipy, sklearn
-You need to have CUDA 10.0 installed
+You need to have CUDA 10.0 installed. You can get it from conda: `conda install cudatoolkit=10.0`
 Solution was tested on Anaconda3-2019.10-Linux-x86_64.sh: https://www.anaconda.com/distribution/
 
 * Hardware requirements
@@ -35,9 +35,10 @@ There is file run_train.sh - which do all the stuff including pip installation o
 
 You need to change run_inference.sh and run_train.sh for your environment:
 
-Change this variable to location of your python (Anaconda)
+If needed, explicitly add your Python environment to your PATH. Change this variable to location of your python (Anaconda)
 export PATH="/var/anaconda3-temp/bin/"
+
 Change this variable to location of your code
-export PYTHONPATH="$PYTHONPATH:/var/test_alzheimer/"
+export PYTHONPATH="$PYTHONPATH:/<path-to-repo>/clog-loss-alzheimers-research/1st Place/src/"
 
 After you run inference or train final submission file will be located in ../subm/submission.csv file.

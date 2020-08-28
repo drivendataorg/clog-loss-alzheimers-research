@@ -13,3 +13,4 @@ kito==1.0.4
 catboost==0.12.2
 xgboost==0.90
 lightgbm==2.3.1
+tqdm
