@@ -15,7 +15,7 @@ Through the Stall Catchers project, there is now a one-of-a-kind dataset that ca
 
 ## What's in this Repository
 
-This repository contains code from winning competitors in the [Clog Loss: Advance Alzheimer’s Research with Stall Catchers](https://www.drivendata.org/competitions/65/clog-loss-alzheimers-research/) DrivenData challenge.
+This repository contains code from winning competitors in the [Clog Loss: Advance Alzheimer’s Research with Stall Catchers](https://www.drivendata.org/competitions/65/clog-loss-alzheimers-research/) DrivenData challenge. Code for all winning solutions are open source under the MIT License.
 
 **Winning code for other DrivenData competitions is available in the [competition-winners repository](https://github.com/drivendataorg/competition-winners).**
 
